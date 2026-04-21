@@ -4,17 +4,100 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>RevouFun</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/index.css">
+        <!-- icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
     <body>
         <header>
-            <h1>RevouFun</h1>
+            <h1>RevoFun</h1>
             <nav>
                 <a href="index.html">Home</a>
-                <a href="pages/about.html">About</a>
+                <a href="pages/about.html">About Us</a>
                 <a href="pages/games.html">Games</a>
-                <a href="pages/settings.html">Settings</a>
             </nav>
         </header>
+        <main>
+            <section class="hero">
+                <h2>Hola, RevoFun !</h2>
+                <p>
+                    The ultimate fun zone for everyone, anytime, anywhere.
+                </p>
+                <a class="btnAbout" href="pages/about.html">Learn More About Us</a>
+            </section>
+            <section class="games">
+                <h2>Our Games</h2>
+                <div class="cards">
+                    <article class="card">
+                        <h3>Rocky Papery Snippy</h3>
+                        <p>
+                            A classic rock, paper, scissors game with a twist. Challenge yourself against the computer and see who comes out on top!
+                        </p>
+                    </article>
+                    <article class="card">
+                        <h3>Numbie Wumbie</h3>
+                        <p>
+                            Guess the number in as few attempts as possible. Can you beat the system?
+                        </p>
+                    </article>
+                    <article class="card">
+                        <h3>Clicky Wicky</h3>
+                        <p>
+                            Test your reflexes with Clicky Wicky! Click the button as fast as you can within the time limit, and see how high you can score!
+                        </p>
+                    </article>
+                </div>
+            </section>
+            <section class="feedback">
+                <h2>Feedback Hub</h2>
+                <p>
+                    We'd love to hear your thoughts! Share your feedback, suggestions, or report any issues you encounter.
+                </p>
+                <form action="#" class="feedback-form">
+                    <label for="input-name">Name:</label><br>
+                    <input 
+                        type="text" 
+                        id="input-name" 
+                        name="name" 
+                        placeholder="Who are you?" required><br>
+                    <label for="input-email">Email:</label><br>
+                    <input 
+                        type="email" 
+                        id="input-email" 
+                        name="email" 
+                        placeholder="What's your email?" required><br>
+                    <label for="input-feedback">Feedback:</label><br>
+                    <textarea 
+                        id="input-feedback" 
+                        name="feedback" 
+                        placeholder="Tell us what you think..." 
+                        rows="5"
+                        required>
+                    </textarea><br>
+                    <button type="reset">Reset</button>
+                    <button type="submit">Submit Feedback</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <div class="profile">
+                <h3>RevoFun Team</h3>
+                <a href=""></a>
+                <i class="fa-brands fa-discord"></i>
+                <a href=""></a>
+                <i class="fa-brands fa-instagram"></i>
+                <p>
+                    &copy <span id="year"></span> RevoFun. Play, laugh, and repeat! All rights reserved.
+                </p>
+            </div>
+            <div class="navigation">
+                <h3>Navigation</h3>
+                <a href="index.html">Home</a>
+                <a href="pages/about.html">About Us</a>
+                <a href="pages/games.html">Games</a>
+            </div>
+        </footer>
     </body>
 
 </html>
