@@ -59,3 +59,70 @@ main {
 main p {
     font-size: 18px;
 }
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 40px;
+    margin: 20px;
+    padding: 20px 0;
+    width: 100%;
+}
+
+footer h3 {
+    font-size: 24px;
+}
+
+.profile {
+    line-height: 2;
+}
+
+.profile a {
+    padding-right: 4px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    line-height: 1.5;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: var(--cream);
+    font-weight: 500;
+}
+
+.navigation a::before {
+    content: "> ";
+}
+
+.profile a:hover,
+.navigation a:hover {
+    opacity: 0.7;
+    transition: 0.4s;
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    main {
+        margin: 20px 12px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+}

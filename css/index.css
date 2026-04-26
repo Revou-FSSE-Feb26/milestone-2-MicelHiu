@@ -1,4 +1,5 @@
 @import url(base.css);
+
 body {
     margin: 0;
     padding: 0;
@@ -9,6 +10,9 @@ main {
     padding: 0;
 }
 
+h2 {
+    font-size: 34px;
+}
 header {
     position: fixed;
     top: 0;
@@ -50,7 +54,7 @@ header {
     font-weight: 700;
     position: relative;
     z-index: 2;
-    -webkit-text-stroke: 3px rgba(80, 40, 0, 0, 9);
+    color: var(--brown);
     paint-order: stroke fill;
     text-shadow: 
         0 4px 0px rgba(0, 0, 0, 0.4),
@@ -67,47 +71,126 @@ header {
     line-height: 1.6;
     position: relative;
     z-index: 2;
-    color: #fff;
+    color: var(--black);
     text-shadow: 0 2px 8px rgba(0,0,0,0.8);
     margin-bottom: 2rem;
     animation: heroFadeIn 1s 0.2s ease both;
 }
 
-.btnPlay {
-    position: relative;
-    z-index: 2;
+.btnAbout {
     display: inline-block;
-    padding: 0.75rem 2.5rem;
-    background: #FFD700;
-    color: #3a2200;
-    font-weight: 700;
-    font-size: 1.1rem;
-    border-radius: 999px;
-    border: 3px solid #5a3a00;
+    align-self: center;
+    background: var(--brown);
+    padding: 10px 16px;
     text-decoration: none;
-    letter-spacing: 1px;
-    box-shadow: 
-        0 4px 0 #5a3a00,
-        0 8px 20px rgba(0,0,0,0.4);
-    transition: transform 0.1s, box-shadow 0.1s;
-    animation: heroFadeIn 1s 0.4s ease both;
+    color: var(--yellow);
+    border-radius: 8px;
+    box-shadow: 8px 8px 11px 5px rgba(244,179,21,0.55);
+    z-index: 2;
+    font-weight: 300;
 }
 
-.btnPlay:hover {
-    transform: translateY(-3px);
-    box-shadow: 
-        0 6px 0 #5a3a00,
-        0 12px 24px rgba(0,0,0,0.5);
-}
-
-.btnPlay:active {
-    transform: translateY(2px);
-    box-shadow: 
-        0 2px 0 #5a3a00,
-        0 4px 10px rgba(0,0,0,0.3);
+.btnAbout:hover {
+    background: var(--oldyellow);
+    color: var(--brown);
 }
 
 @keyframes heroFadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
+}
+
+.games {
+    margin: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.games h2 {
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    display: grid;
+    grid-template-rows: auto 180px 1fr auto;
+    gap: 12px;
+}
+
+.card p {
+    line-height: 1.5;
+}
+
+.card:hover{
+    transition: 0.3s;
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 11px 5px rgba(244,179,21,0.55);
+}
+
+.feedback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.feedback p {
+    margin: 24px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.feedback-form {
+    width: 100%;
+    max-width: 600px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    box-sizing: border-box;
+    background-color: var(--yellow);
+}
+
+.feedback-form input::placeholder,
+.feedback-form textarea::placeholder {
+    color: var(--black);
+}
+
+.feedback-form label {
+    font-size: 18px;
+}
+
+.feedback-form textarea {
+    resize: vertical;
+}
+
+.feedback-form button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: var(--grey);
+    color: var(--yellow);
+    font-weight: bolder;
+}
+
+.feedback-form button:hover {
+    background: var(--yellow);
+    color: var(--black);
 }
