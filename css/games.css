@@ -1,0 +1,39 @@
+@import url(base.css);
+
+h2 {
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220, 1fr));
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    display: grid;
+    grid-template-rows: auto 180px 1fr auto;
+    gap: 12px;
+}
+
+.card p {
+    line-height: 1.5;
+}
+
+.card:hover{
+    transition: 0.3s;
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 11px 5px rgba(244,179,21,0.55);
+    cursor: pointer;
+}
+
+.info {
+    text-align: center;
+    margin: 20px;
+}

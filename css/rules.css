@@ -1,0 +1,68 @@
+@import url(base.css);
+
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    margin: 50px;
+}
+
+.btnBack {
+    display: inline-block;
+    align-self: flex-start;
+    text-decoration: none;
+    background-color: var(--yellow);
+    padding: 10px 16px;
+    color: var(--brown);
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.btnBack:hover {
+    background-color: var(--brown);
+    color: var(--yellow);
+}
+
+h1 {
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.rules-card {
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 20px;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.rules-card h2 {
+    text-align: center;
+}
+
+.btnStart {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btnStart a {
+    text-decoration: none;
+    background: var(--yellow);
+    padding: 5px 18px;
+    border-radius: 8px;
+    color: var(--brown);
+    font-weight: bolder;
+}
+
+.btnStart a:hover {
+    transition: 0.3s;
+    transform: translateY(-3px);
+    background: var(--brown);
+    color: var(--yellow);
+}

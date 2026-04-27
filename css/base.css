@@ -126,3 +126,7 @@ footer h3 {
         gap: 14px;
     }
 }
+
+@media screen and (max-width: 468px) {
+    
+}
