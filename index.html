@@ -33,19 +33,19 @@
             <section class="games">
                 <h2>Our Games</h2>
                 <div class="cards">
-                    <article class="card">
+                    <article class="card" id="rocky">
                         <h3>Rocky Papery Snippy</h3>
                         <p>
                             A classic rock, paper, scissors game with a twist. Challenge yourself against the computer and see who comes out on top!
                         </p>
                     </article>
-                    <article class="card">
+                    <article class="card" id="numbie">
                         <h3>Numbie Wumbie</h3>
                         <p>
                             Guess the number in as few attempts as possible. Can you beat the system?
                         </p>
                     </article>
-                    <article class="card">
+                    <article class="card" id="clicky">
                         <h3>Clicky Wicky</h3>
                         <p>
                             Test your reflexes with Clicky Wicky! Click the button as fast as you can within the time limit, and see how high you can score!
@@ -83,14 +83,31 @@
                     <button type="submit">Submit Feedback</button>
                 </form>
             </section>
+            <script>
+                const rocky = document.querySelector("#rocky");
+                const numbie = document.querySelector("#numbie");
+                const clicky = document.querySelector("#clicky");
+
+                rocky.addEventListener("click", () => {
+                    window.location.href = "pages/rules/rocky.html"
+                });
+                numbie.addEventListener("click", () => {
+                    window.location.href = "pages/rules/numbie.html"
+                });
+                clicky.addEventListener("click", () => {
+                    window.location.href = "pages/rules/clicky.html"
+                });
+            </script>
         </main>
         <footer>
             <div class="profile">
                 <h3>RevoFun Team</h3>
-                <a href=""></a>
-                <i class="fa-brands fa-discord"></i>
-                <a href=""></a>
-                <i class="fa-brands fa-instagram"></i>
+                <div class="socials">
+                    <a href=""></a>
+                        <i class="fa-brands fa-discord"></i>
+                    <a href=""></a>
+                        <i class="fa-brands fa-instagram"></i>
+                </div>
                 <p>
                     &copy <span id="year"></span> RevoFun. Play, laugh, and repeat! All rights reserved.
                 </p>
