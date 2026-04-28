@@ -35,6 +35,18 @@ h1 {
     margin-top: 40px;
 }
 
+.hands img {
+    width: 300px;
+}
+
+.result {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .score {
     display: flex;
     flex-direction: row;
@@ -70,3 +82,39 @@ h1 {
     width: 150px;
     margin: 32px;
 }
+
+.options-buttons button:hover {
+    cursor: pointer;
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+    12.5% {
+        transform: rotate(30deg);
+    }
+    25% {
+        transform: rotate(-30deg);
+    }
+    37.5% {
+        transform: rotate(30deg);
+    }
+    50% {
+        transform: rotate(-30deg);
+    }
+    62.5% {
+        transform: rotate(30deg);
+    }
+    75% {
+        transform: rotate(-30deg);
+    }
+    87.5% {
+        transform: rotate(30deg);
+    }
+    100% {
+        transform: rotate(-30deg);
+    }
+}
+

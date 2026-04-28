@@ -45,24 +45,25 @@ h1 {
     text-align: center;
 }
 
-.btnStart {
+.btn-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.btnStart a {
+.btnStart {
     text-decoration: none;
     background: var(--yellow);
-    padding: 5px 18px;
+    padding: 6px 18px;
+    margin: 8px;
     border-radius: 8px;
     color: var(--brown);
-    font-weight: bolder;
+    font-weight: bold;
 }
 
-.btnStart a:hover {
+.btnStart:hover {
     transition: 0.3s;
-    transform: translateY(-3px);
+    transform: scale(1.1);
     background: var(--brown);
     color: var(--yellow);
 }

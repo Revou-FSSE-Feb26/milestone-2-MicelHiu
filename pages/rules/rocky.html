@@ -6,34 +6,72 @@
         <title>RevouFun</title>
         <!-- CSS -->
         <link rel="stylesheet" href="../../css/rules.css">
+        <link rel="stylesheet" href="../../css/games/rocky.css">
         <!-- FONTS -->
          <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <a href="../games.html" class="btnBack">Back to Games Menu</a>
-        <section class="rules">
-            <h1>Game Rules</h1>
-            <article class="rules-card">
-                <h2>Rocky Papery Snippy</h2>
-                <ol>
-                    <li>Choose rock, paper, or scissors to encounter computer.</li>
-                    <li>Winner are decided by classic rock, paper, scissors rules:</li>
-                        <ul>
-                            <li>Rock beats Scissors</li>
-                            <li>Scissors beats Paper</li>
-                            <li>Paper beats Rock</li>
-                        </ul>
-                    <li>The player or computer gains 1 point for every round they win.</li>
-                    <li>No points are awarded if both choices are the same.</li>
-                    <li>The fastest to get 3 points will be the winner of the game.</li>
-                    <li>Have fun !</li>
-                </ol>
-                <div class="btnStart">
-                    <a href="../games/rocky.html">Start</a>
-                </div>
-            </article>
-        </section>
+        <div class="rules">
+            <a href="../games.html" class="btnBack">Back to Games Menu</a>
+            <section class="rules">
+                <h1>Game Rules</h1>
+                <article class="rules-card">
+                    <h2>Rocky Papery Snippy</h2>
+                    <ol>
+                        <li>Choose rock, paper, or scissors to encounter computer.</li>
+                        <li>Winner are decided by classic rock, paper, scissors rules:</li>
+                            <ul>
+                                <li>Rock beats Scissors</li>
+                                <li>Scissors beats Paper</li>
+                                <li>Paper beats Rock</li>
+                            </ul>
+                        <li>The player or computer gains 1 point for every round they win.</li>
+                        <li>No points are awarded if both choices are the same.</li>
+                        <li>The fastest to get 3 points will be the winner of the game.</li>
+                        <li>Have fun !</li>
+                    </ol>
+                    <div class="btn-container">
+                        <button class="btnStart">Start</button>
+                    </div>
+                </article>
+            </section>
+        </div>
+        <div class="rocky">
+            <a href="../rules/rocky.html" class="btnBack">Back</a>
+            <h1>Rocky Papery Snippy</h1>
+                <section class="hands">
+                    <img src="../../images/rocky/rockComputer.png" class="computer"/>
+                    <div class="result">
+                        <h2></h2>
+                    </div>
+                    <img src="../../images/rocky/rockPlayer.png" class="player"/>
+                </section>
+                <section class="score">
+                    <p>Computer <span class="computerPoints">0</span> / <span class="playerPoints">0</span> Player</p>
+                </section>
+                <section class="options">
+                    <p>Choose an Option</p>
+                    <div class="options-buttons">
+                        <button type="button" data-choice="rock">ROCK</button>
+                        <button type="button" data-choice="paper">PAPER</button>
+                        <button type="button" data-choice="scissors">SCISSORS</button>
+                    </div>
+                </section>
+            <script src="../../javascript/rocky.js"></script>
+        </div>
+        <script>
+            const startButton = document.querySelector(".btnStart");
+            const rulesSection = document.querySelector(".rules");
+            const rockySection = document.querySelector(".rocky");
+
+            rockySection.style.display = "none";
+
+            startButton.addEventListener("click", function() {
+                rulesSection.style.display = "none";
+                rockySection.style.display = "block";
+            })
+        </script>
     </body>
 </html>
