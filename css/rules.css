@@ -2,10 +2,15 @@
 
 * {
     font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box;
 }
 
 body {
     margin: 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .btnBack {
@@ -17,6 +22,8 @@ body {
     color: var(--brown);
     font-weight: bold;
     border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .btnBack:hover {
@@ -34,15 +41,24 @@ h1 {
 .rules-card {
     border: 1px solid;
     border-radius: 8px;
-    padding: 20px;
+    padding: 24px 32px;
     line-height: 2;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+    max-width: 700px;
+    width: 100%;
 }
 
 .rules-card h2 {
     text-align: center;
+}
+
+.rules-card ol {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .btn-container {

@@ -1,0 +1,77 @@
+@import url(../base.css);
+
+body {
+    margin: 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btnBack {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--yellow);
+    padding: 10px 16px;
+    color: var(--brown);
+    font-weight: bold;
+    border-radius: 8px;
+    margin-bottom: 36px;
+}
+
+.btnBack:hover {
+    background-color: var(--brown);
+    color: var(--yellow);
+}
+
+h1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+}
+
+.answer-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.answer-box textarea {
+    height: 50px;
+    max-width: 100px;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    resize: none;
+    
+    background-color: var(--black);
+    color: var(--yellow);
+    border-radius: 8px;
+    border: 1px solid var(--yellow);
+}
+
+.result-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnCheck {
+    padding: 10px 16px;
+    background: var(--cream);
+    color: var(--black);
+    font-weight: 700;
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+.btnCheck:hover {
+    cursor: pointer;
+    background: var(--black);
+    color: var(--cream);
+}
+

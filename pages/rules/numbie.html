@@ -6,29 +6,66 @@
         <title>RevouFun</title>
         <!-- CSS -->
         <link rel="stylesheet" href="../../css/rules.css">
+        <link rel="stylesheet" href="../../css/games/numbie.css">
         <!-- FONTS -->
          <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <a href="../games.html" class="btnBack">Back to Games Menu</a>
-        <section class="rules">
-            <h1>Game Rules</h1>
-            <article class="rules-card">
-                <h2>Numbie Wumbie</h2>
-                <ol>
-                    <li>The computer will secretly choose a number between 1-100.</li>
-                    <li>You enter a number as their guess.</li>
-                    <li>The system will tell you if your guess is too high or too low.</li>
-                    <li>You only have 5 tries to guess the correct number.</li>
-                    <li>If you successfully guess the number under 5 tries, you win the game.</li>
-                    <li>Have fun !</li>
-                </ol>
-                <div class="btnStart">
-                    <a href="../games/numbie.html">Start</a>
+        <div class="rules">
+            <a href="../games.html" class="btnBack">Back to Games Menu</a>
+            <section class="rules">
+                <h1>Game Rules</h1>
+                <article class="rules-card">
+                    <h2>Numbie Wumbie</h2>
+                    <ol>
+                        <li>The computer will secretly choose a number between 1-100.</li>
+                        <li>You enter a number as their guess.</li>
+                        <li>The system will tell you if your guess is too high or too low.</li>
+                        <li>You only have 5 tries to guess the correct number.</li>
+                        <li>If you successfully guess the number under 5 tries, you win the game.</li>
+                        <li>Have fun !</li>
+                    </ol>
+                    <div class="btn-container">
+                        <button class="btnStart">Start</button>
+                    </div>
+                </article>
+            </section>
+        </div>
+
+        <div class="numbie">
+            <a href="../rules/numbie.html" class="btnBack">Back</a>
+            <h1>What is the Numbie ?</h1>
+            <section class="answer-box">
+                <h2>Type your answer</h2>
+                <textarea
+                    id="input-answer"
+                    name="answer"
+                    placeholder="1-100"
+                    rows="1"></textarea>
+                <button class="btnCheck">Check</button>
+                <p>Attempts left : <span class="attempts">5</span></p>
+            </section>
+            <section class="result">
+                <div class="result-container">
+                    <p></p>
+                    <p></p>
                 </div>
-            </article>
-        </section>
+            </section>
+            <script src="../../javascript/numbie.js"></script>
+        </div>
+        <script>
+            const startButton = document.querySelector(".btnStart");
+            const rulesSection = document.querySelector(".rules");
+            const numbieSection = document.querySelector(".numbie");
+
+            numbieSection.style.display = "none";
+
+            startButton.addEventListener("click", function() {
+                rulesSection.style.display = "none";
+                numbieSection.style.display = "block";
+            });
+        </script>
     </body>
 </html>

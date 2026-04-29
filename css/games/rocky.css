@@ -47,6 +47,11 @@ h1 {
     flex-wrap: wrap;
 }
 
+.result h2 {
+    align-items: center;
+    text-align: center;
+}
+
 .score {
     display: flex;
     flex-direction: row;
