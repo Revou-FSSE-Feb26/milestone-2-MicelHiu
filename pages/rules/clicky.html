@@ -6,29 +6,44 @@
         <title>RevouFun</title>
         <!-- CSS -->
         <link rel="stylesheet" href="../../css/rules.css">
+        <link rel="stylesheet" href="../../css/games/clicky.css">
         <!-- FONTS -->
-         <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <a href="../games.html" class="btnBack">Back to Games Menu</a>
-        <section class="rules">
-            <h1>Game Rules</h1>
-            <article class="rules-card">
-                <h2>Clicky Wicky</h2>
-                <ol>
-                    <li>Dots will appear randomly on the screen.</li>
-                    <li>You will be given 45 seconds to click each dot before it disappears.</li>
-                    <li>Each successfull click earns 1 points.</li>
-                    <li>Missed dots will not give you any points.</li>
-                    <li>Get the highest score before the time runs out.</li>
-                    <li>Have fun !</li>
-                </ol>
-                <div class="btnStart">
-                    <a href="../games/clicky.html">Start</a>
+        <div class="rules">
+            <a href="../games.html" class="btnBack">Back to Games Menu</a>
+            <section class="rules">
+                <h1>Game Rules</h1>
+                <article class="rules-card">
+                    <h2>Clicky Wicky</h2>
+                    <ol>
+                        <li>Dots will appear randomly on the screen.</li>
+                        <li>You will be given 45 seconds to click each dot before it disappears.</li>
+                        <li>Each successfull click earns 1 points.</li>
+                        <li>Missed dots will not give you any points.</li>
+                        <li>Get the highest score before the time runs out.</li>
+                        <li>Have fun !</li>
+                    </ol>
+                    <div class="btn-container">
+                        <button class="btnStart">Start</button>
+                    </div>
+                </article>
+            </section>
+        </div>
+
+        <div class="clicky">
+            <section class="arena">
+                <div class="information">
+                    <p class="left">Score: <span class="score"></span></p>
+                    <p class="right">Time Left: <span class="timer"></span></p>
                 </div>
-            </article>
-        </section>
+                <h1 class="countdown"></h1>
+            </section>
+            <p class="back">Press esc to go back</p>
+            <script src="../../javascript/clicky.js"></script>
+        </div>
     </body>
 </html>

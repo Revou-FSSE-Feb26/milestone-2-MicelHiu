@@ -21,7 +21,11 @@ btnCheck.addEventListener("click", function() {
     const playerAnswer = Number(document.getElementById("input-answer").value); 
 
     if (!playerAnswer || playerAnswer < 1 || playerAnswer > 100) {
-        result.textContent = "Between 1 and 100 fellas. Read the rules again please";
+        result[0].textContent = `Your answer = ${playerAnswer}`;
+        result[1].textContent = "Between 1 and 100 fellas. Read the rules again please";
+        attempts--;
+        attemptsEl.textContent = attempts;
+        return;
     }
 
     if (playerAnswer > randomNumber) {

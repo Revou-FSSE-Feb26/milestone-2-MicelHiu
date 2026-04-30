@@ -1,0 +1,53 @@
+@import url(../base.css);
+
+.body {
+    margin: 0;
+}
+
+.clicky {
+    position: relative;
+    height: 90vh;
+}
+
+.arena {
+    width: 100%;
+    height: 80vh;
+}
+
+.information {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.left {
+    justify-self: start;
+    padding-right: 32px;
+}
+
+.right {
+    justify-self: end;
+    margin-left: 32px
+}
+
+.back {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.countdown {
+    margin-top: 30px;
+    font-size: 100px;
+}
+
+.dot {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    cursor: pointer;
+}
