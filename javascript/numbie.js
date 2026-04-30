@@ -5,7 +5,7 @@ const attemptsEl = document.querySelector(".attempts");
 let attempts = Number(attemptsEl.textContent);
 
 
-// testing for winning
+// testing for winning (shortcuts)
 // result[0].textContent = randomNumber;
 
 function resetGame() {

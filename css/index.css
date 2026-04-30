@@ -14,7 +14,6 @@ h2 {
     font-size: 34px;
 }
 header {
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -112,24 +111,61 @@ header {
     text-align: center;
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(220px, 1fr));
-    gap: 20px;
+.carousel {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    overflow: hidden;
 }
 
+.carousel-wrap {
+    overflow: hidden;
+    flex: 1;
+}
+
+.card-container {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.4s cubic-bezier(.4, 0, .2, 1);
+    will-change: transform;
+    align-items: center;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 0 40px;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+}
+
+.card img {
+    width: 220px;
+}
 .card {
-    border: 1px solid;
-    border-radius: 20px;
-    padding: 20px;
-    text-align: center;
-    display: grid;
-    grid-template-rows: auto 180px 1fr auto;
+    min-width: 220px;
+    padding: 30px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 12px;
+    flex-shrink: 0;
+    scroll-snap-type: center;
+    flex-wrap: wrap;
+    border: 1px solid;
+    border-radius: 12px;
+}
+
+.card h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
 }
 
 .card p {
+    margin: 0;
     line-height: 1.5;
+    max-width: 300px;
+    text-align: center;
 }
 
 .card:hover{
@@ -137,6 +173,17 @@ header {
     transform: translateY(-5px);
     box-shadow: 8px 8px 11px 5px rgba(244,179,21,0.55);
     cursor: pointer;
+}
+
+.arrow-left,
+.arrow-right {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--cream);
+    z-index: 2;
+    opacity: 0.3s;
 }
 
 .feedback {

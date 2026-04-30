@@ -2,7 +2,7 @@ const start = document.querySelector(".btnStart");
 const rulesSection = document.querySelector(".rules");
 const clickySection = document.querySelector(".clicky");
 
-let timeLeft = 45;
+let timeLeft = 30;
 let timerInterval;
 let isGameRunning = false;
 
@@ -57,7 +57,7 @@ function startTimer() {
     const timer = document.querySelector(".timer");
 
     isGameRunning = true;
-    timeLeft = 45;
+    timeLeft = 30;
     timer.textContent = timeLeft;
 
     timerInterval = setInterval(() => {
@@ -70,8 +70,11 @@ function startTimer() {
     }, 1000);
 }
 
+let currentDot = null;
+
 function spawnDot() {
     if(!isGameRunning) return;
+    clearTimeout(dotTimeout);
 
     //buat dot
     const dot = document.createElement("div");
@@ -79,6 +82,8 @@ function spawnDot() {
 
     //pastiin posisi random
     const arena = document.querySelector(".arena");
+
+    if(currentDot) currentDot.remove();
     const arenaRect = arena.getBoundingClientRect();
 
     const x = Math.random() * (arenaRect.width - 50);
@@ -88,12 +93,11 @@ function spawnDot() {
     dot.style.top = y + "px";
 
     arena.appendChild(dot);
+    currentDot = dot;
 
     dot.addEventListener("click", () => {
         score++;
         document.querySelector(".score").textContent = score;
-
-        dot.remove();
         spawnDot();
     });
 
@@ -113,7 +117,7 @@ function stopGame() {
 
     document.querySelectorAll(".dot").forEach(dot => dot.remove());
 
-    alert(`Time's up! Your score: ${score}`);
+    alert(`Your score: ${score}`);
 
     rulesSection.style.display = "block";
     clickySection.style.display = "none";

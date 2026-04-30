@@ -15,14 +15,18 @@ function getComputerChoice() {
 }
 
 function getWinner(player, computer) {
-    if (player === computer) {
-        return "draw";
-    } else if (
-        (player === "rock" && computer === "scissors") || (player === "paper" && computer === "rock") || (player === "scissors" && computer === "paper")
-    ) {
-        return "player";
-    } else {
-        return "computer";
+    const choicesResult = `${player}-${computer}`;
+
+    if(player === computer) return "draw";
+
+    switch(choicesResult) {
+        case `rock-scissors`:
+        case `scissors-paper`:
+        case `paper-rock`:
+            return "player";
+            break;
+        default:
+            return "computer";
     }
 }
 
