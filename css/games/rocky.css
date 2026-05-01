@@ -123,3 +123,64 @@ h1 {
     }
 }
 
+/* TABLET */
+@media screen and (max-width: 768px) {
+    body {
+        margin: 24px;
+    }
+
+    .hands img {
+        width: 200px;
+    }
+
+    .options-buttons {
+        gap: 12px;
+    }
+
+    .options-buttons button {
+        width: 120px;
+        font-size: 16px;
+        margin: 16px;
+    }
+}
+
+/* MOBILE */
+@media screen and (max-width: 480px) {
+    body {
+        margin: 16px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 28px;
+    }
+
+    .hands {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .hands img {
+        width: 150px;
+    }
+
+    .result h2 {
+        font-size: 20px;
+    }
+
+    .score {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .options-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .options-buttons button {
+        width: 100%;
+        max-width: 250px;
+        margin: 8px 0;
+    }
+}
