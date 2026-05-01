@@ -96,12 +96,11 @@
         </main>
         <footer>
             <div class="profile">
-                <h3>RevoFun Team</h3>
                 <div class="socials">
-                    <a href="https://discord.gg/PG6EAv7Fv5"></a>
+                    <h3>RevoFun Team</h3>
+                    <a href="https://discord.gg/PG6EAv7Fv5">
                         <i class="fa-brands fa-discord"></i>
-                    <a href=""></a>
-                        <i class="fa-brands fa-instagram"></i>
+                    </a>
                 </div>
                 <p>
                     &copy <span id="year"></span> RevoFun. Play, laugh, and repeat! All rights reserved.
@@ -114,5 +113,8 @@
                 <a href="games.html">Games</a>
             </div>
         </footer>
+        <script>
+            document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
     </body>>
 </html>

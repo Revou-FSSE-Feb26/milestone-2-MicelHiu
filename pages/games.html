@@ -50,29 +50,15 @@
                 </div>
                 <h3 class="info"><i>More Games coming soon...</i></h3>
             </section>
-            <script>
-                const rocky = document.querySelector("#rocky");
-                const numbie = document.querySelector("#numbie");
-                const clicky = document.querySelector("#clicky");
-
-                rocky.addEventListener("click", () => {
-                    window.location.href = "rules/rocky.html"
-                });
-                numbie.addEventListener("click", () => {
-                    window.location.href = "rules/numbie.html"
-                });
-                clicky.addEventListener("click", () => {
-                    window.location.href = "rules/clicky.html"
-                });
-            </script>
         </main>
         <footer>
             <div class="profile">
-                <h3>RevoFun Team</h3>
-                <a href="https://discord.gg/PG6EAv7Fv5"></a>
-                <i class="fa-brands fa-discord"></i>
-                <a href=""></a>
-                <i class="fa-brands fa-instagram"></i>
+                <div class="socials">
+                    <h3>RevoFun Team</h3>
+                    <a href="https://discord.gg/PG6EAv7Fv5">
+                        <i class="fa-brands fa-discord"></i>
+                    </a>
+                </div>
                 <p>
                     &copy <span id="year"></span> RevoFun. Play, laugh, and repeat! All rights reserved.
                 </p>
@@ -84,5 +70,22 @@
                 <a href="games.html">Games</a>
             </div>
         </footer>
+        <script>
+            const rocky = document.querySelector("#rocky");
+            const numbie = document.querySelector("#numbie");
+            const clicky = document.querySelector("#clicky");
+
+            rocky.addEventListener("click", () => {
+                window.location.href = "rocky.html"
+            });
+            numbie.addEventListener("click", () => {
+                window.location.href = "numbie.html"
+            });
+            clicky.addEventListener("click", () => {
+                window.location.href = "clicky.html"
+            });
+
+            document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
     </body>
 </html>

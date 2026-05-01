@@ -13,6 +13,7 @@ main {
 h2 {
     font-size: 34px;
 }
+
 header {
     top: 0;
     left: 0;
@@ -50,7 +51,7 @@ header {
 
 .hero h2 {
     font-size: 5rem;
-    font-weight: 700;
+    font-weight: 900;
     position: relative;
     z-index: 2;
     color: var(--brown);
@@ -86,7 +87,7 @@ header {
     border-radius: 8px;
     box-shadow: 8px 8px 11px 5px rgba(244,179,21,0.55);
     z-index: 2;
-    font-weight: 300;
+    font-weight: 600;
 }
 
 .btnAbout:hover {
@@ -99,68 +100,71 @@ header {
     to   { opacity: 1; transform: translateY(0); }
 }
 
+/* games section */
 .games {
     margin: 24px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .games h2 {
     margin-top: 60px;
     margin-bottom: 16px;
     text-align: center;
-}
-
-.carousel {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    overflow: hidden;
+    color: var(--yellow);
 }
 
 .carousel-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    width: 100%;
     overflow: hidden;
-    flex: 1;
+}
+
+.carousel {
+    width: 900px;
+    overflow: hidden;
 }
 
 .card-container {
     display: flex;
     gap: 16px;
-    transition: transform 0.4s cubic-bezier(.4, 0, .2, 1);
-    will-change: transform;
+
+    transition: transform 0.4s ease;
+}
+
+.card {
+    min-width: 260px;
+    flex-shrink: 0;
+
+    padding: 30px;
+    margin: 20px;
+
+    border: 1px solid var(--cream);
+    border-radius: 12px;
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     align-items: center;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 0 40px;
-    scrollbar-width: none;
-    scroll-snap-type: x mandatory;
 }
 
 .card img {
     width: 220px;
 }
 
-.card {
-    min-width: 220px;
-    padding: 30px;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
-    scroll-snap-type: center;
-    flex-wrap: wrap;
-    border: 1px solid;
-    border-radius: 12px;
-    transition: transform 0.4s cubic-bezier(.4, 0, .2, 1), opacity 0.4s ease;
-}
-
-.card h2 {
+.card h3 {
     font-size: 24px;
     font-weight: 600;
     margin: 0;
+    color: var(--yellow);
 }
 
 .card p {
@@ -183,7 +187,13 @@ header {
     cursor: pointer;
     color: var(--cream);
     z-index: 2;
-    opacity: 0.3s;
+    transition: opacity 0.3;
+}
+
+.arrow-left:disabled,
+.arrow-right:disabled {
+    opacity: 0.2;
+    cursor: default;
 }
 
 .feedback {
@@ -191,6 +201,10 @@ header {
     flex-direction: column;
     align-items: center;
     margin-top: 60px;
+}
+
+.feedback h2 {
+    color: var(--yellow);
 }
 
 .feedback p {
@@ -246,4 +260,194 @@ header {
 .feedback-form button:hover {
     background: var(--yellow);
     color: var(--black);
+}
+
+/* tablet */
+@media screen and (max-width: 1024px) {
+    .hero h2 {
+        font-size: 3.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        max-width: 400px;
+    }
+
+    .card {
+        min-width: 200px;
+        padding: 24px;
+        margin: 12px;
+    }
+
+    .card img {
+        width: 180px;
+    }
+
+    .feedback-form {
+        max-width: 500px;
+        padding: 0 20px;
+    }
+}
+
+/* small tablet / larga mobile */
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 28px;
+    }
+
+    .hero h2 {
+        font-size: 2.8rem;
+        letter-spacing: 1px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        max-width: 320px;
+        padding: 0 16px;
+    }
+
+    .games {
+        margin: 16px;
+    }
+
+    .games h2 {
+        margin-top: 40px;
+    }
+
+    .carousel {
+        gap: 4px;
+    }
+
+    .arrow-left,
+    .arrow-right {
+        font-size: 22px;
+    }
+
+    .card {
+        min-width: 180px;
+        padding: 20px 16px;
+        margin: 8px;
+    }
+
+    .card img {
+        width: 150px;
+    }
+
+    .card h3 {
+        font-size: 20px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
+
+    .feedback {
+        margin-top: 40px;
+    }
+
+    .feedback p {
+        margin: 16px;
+        padding: 0 12px;
+        font-size: 15px;
+    }
+
+    .feedback-form {
+        width: 90%;
+        padding: 0 16px;
+    }
+
+    .feedback-form label {
+        font-size: 16px;
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 480px) {
+    h2 {
+        font-size: 24px;
+    }
+
+    .hero {
+        height: 100svh; /* safer on mobile browsers with address bar */
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+        letter-spacing: 0.5px;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+        max-width: 280px;
+    }
+
+    .btnAbout {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .games {
+        margin: 12px;
+    }
+
+    .games h2 {
+        margin-top: 32px;
+        margin-bottom: 12px;
+    }
+
+    .arrow-left,
+    .arrow-right {
+        font-size: 18px;
+    }
+
+    .card {
+        min-width: 160px;
+        padding: 16px 12px;
+        margin: 6px;
+        gap: 8px;
+    }
+
+    .card img {
+        width: 120px;
+    }
+
+    .card h3 {
+        font-size: 17px;
+    }
+
+    .card p {
+        font-size: 13px;
+        max-width: 200px;
+    }
+
+    .feedback {
+        margin-top: 32px;
+    }
+
+    .feedback p {
+        margin: 12px;
+        padding: 0 8px;
+        font-size: 14px;
+    }
+
+    .feedback-form {
+        width: 95%;
+        padding: 0 8px;
+    }
+
+    .feedback-form label {
+        font-size: 15px;
+    }
+
+    .feedback-form input,
+    .feedback-form textarea {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .feedback-form button {
+        width: 100%;
+        padding: 10px;
+        font-size: 15px;
+    }
 }

@@ -3,34 +3,27 @@ const container = document.querySelector(".card-container");
 const cards = document.querySelectorAll(".card");
 const btnLeft = document.querySelector(".arrow-left");
 const btnRight = document.querySelector(".arrow-right");
+
 let currentIndex = 0;
 
-updateArrow();
-updateFocus();
+updateCarousel();
 
-function updateFocus() {
+function updateCarousel() {
+    const cardWidth = cards[0].offsetWidth + 16;
+
+    container.style.transform =
+        `translateX(-${currentIndex * cardWidth}px)`;
+
     cards.forEach((card, i) => {
         if(i === currentIndex) {
-            card.style.transform = "scale(1.1";
+            card.style.transform = "scale(1.05)";
             card.style.opacity = "1";
         } else {
             card.style.transform = "scale(0.9)";
             card.style.opacity = "0.5";
         }
-    })
-}
-
-function updateSlide() {
-    const cardWidth = cards[0].offsetWidth + 16;
-    container.scrollTo({
-        left: currentIndex * cardWidth,
-        behavior: "smooth"
     });
-    updateFocus();
 
-}
-
-function updateArrow() {
     btnLeft.disabled = currentIndex === 0;
     btnRight.disabled = currentIndex === cards.length - 1;
 }
@@ -38,18 +31,16 @@ function updateArrow() {
 btnLeft.addEventListener("click", () => {
     if(currentIndex > 0) {
         currentIndex--;
-        updateSlide();
-        updateArrow();
+        updateCarousel();
     }
 });
 
 btnRight.addEventListener("click", () => {
-    if (currentIndex < cards.length - 1) {
+    if(currentIndex < cards.length - 1) {
         currentIndex++;
-        updateSlide();
-        updateArrow();
+        updateCarousel();
     }
-})
+});
 
 
 //cards interaction
@@ -58,15 +49,15 @@ const numbie = document.querySelector("#numbie");
 const clicky = document.querySelector("#clicky");
 
 rocky.addEventListener("click", () => {
-    window.location.href = "pages/rules/rocky.html"
+    window.location.href = "pages/rocky.html"
 });
 
 numbie.addEventListener("click", () => {
-    window.location.href = "pages/rules/numbie.html"
+    window.location.href = "pages/numbie.html"
 });
 
 clicky.addEventListener("click", () => {
-    window.location.href = "pages/rules/clicky.html"
+    window.location.href = "pages/clicky.html"
 });
 
 
@@ -88,3 +79,5 @@ form.addEventListener("click", (e) => {
             break;
     }
 })
+
+document.getElementById("year").textContent = new Date().getFullYear();

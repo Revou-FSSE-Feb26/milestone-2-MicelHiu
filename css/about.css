@@ -112,6 +112,7 @@
     line-height: 1.8;
     margin-bottom: 14px;
     font-size: 16px;
+    text-align: justify;
 }
 
 .values {
@@ -312,14 +313,34 @@
     box-shadow: 8px 8px 20px 5px rgba(244, 179, 21, 0.35);
 }
 
-/* ── SCROLL REVEAL ── */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+@media screen and (min-width: 768px) {
+    body {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
 }
+@media screen and (max-width: 768px) {
+    .bio {
+        padding: 60px 20px 40px;
+    }
 
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
+    .story {
+        grid-template-columns: 1fr;
+    }
+
+    .story-visual {
+        min-height: 180px;
+    }
+
+    .story-text h2 {
+        text-align: center;
+    }
+
+    .vm {
+        grid-template-columns: 1fr;
+    }
+
+    .closing {
+        padding: 40px 20px 60px;
+    }
 }
