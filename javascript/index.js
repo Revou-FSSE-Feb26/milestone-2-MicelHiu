@@ -6,13 +6,28 @@ const btnRight = document.querySelector(".arrow-right");
 let currentIndex = 0;
 
 updateArrow();
+updateFocus();
+
+function updateFocus() {
+    cards.forEach((card, i) => {
+        if(i === currentIndex) {
+            card.style.transform = "scale(1.1";
+            card.style.opacity = "1";
+        } else {
+            card.style.transform = "scale(0.9)";
+            card.style.opacity = "0.5";
+        }
+    })
+}
 
 function updateSlide() {
-    const cardWidth = cards[0].offsetWidth;
+    const cardWidth = cards[0].offsetWidth + 16;
     container.scrollTo({
         left: currentIndex * cardWidth,
         behavior: "smooth"
     });
+    updateFocus();
+
 }
 
 function updateArrow() {

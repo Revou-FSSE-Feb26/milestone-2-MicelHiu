@@ -1,3 +1,325 @@
 @import url(base.css);
 
+.bio {
+    text-align: center;
+    padding: 80px 40px 60px;
+    position: relative;
+    overflow: hidden;
+}
 
+.bio::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(244, 179, 21, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.bio .tag {
+    display: inline-block;
+    background: rgba(244, 179, 21, 0.12);
+    color: var(--yellow);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(244, 179, 21, 0.3);
+}
+
+.bio h2 {
+    font-size: clamp(36px, 6vw, 68px);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--yellow);
+}
+
+.bio p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--cream);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 60px 0;
+    align-items: center;
+}
+
+.story-visual {
+    background: var(--grey);
+    border-radius: 16px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    border: 1px solid rgba(244, 179, 21, 0.15);
+    position: relative;
+    overflow: hidden;
+    min-height: 260px;
+}
+
+.story-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 70%, rgba(142, 89, 21, 0.2), transparent 60%);
+    pointer-events: none;
+}
+
+.story-visual .year {
+    font-size: 80px;
+    font-weight: 700;
+    color: rgba(244, 179, 21, 0.06);
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    line-height: 1;
+}
+
+.story-visual .emoji-stack {
+    font-size: 48px;
+    z-index: 1;
+}
+
+.story-visual p {
+    font-size: 13px;
+    color: var(--cream);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    z-index: 1;
+    opacity: 0.7;
+}
+
+.story-text h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--yellow);
+    margin-bottom: 16px;
+}
+
+.story-text p {
+    color: var(--cream);
+    line-height: 1.8;
+    margin-bottom: 14px;
+    font-size: 16px;
+}
+
+.values {
+    padding: 60px 0;
+}
+
+.values > h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--yellow);
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.values > p {
+    color: var(--cream);
+    opacity: 0.7;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.values-card {
+    background: var(--grey);
+    border-radius: 16px;
+    padding: 28px 24px;
+    border: 1px solid rgba(142, 89, 21, 0.1);
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    cursor: default;
+}
+
+.values-card:hover{
+    transform: translateY(-6px);
+    border-color: rgba(244, 179, 21, 0.4);
+    box-shadow: 0 8px 24px rgba(244, 179, 21, 0.1)
+}
+
+.values-card .icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.values-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--yellow);
+    margin-bottom: 6px;
+}
+
+.values-card p {
+    color: var(--cream);
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
+
+.vissionMission {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 20px 0 60px;
+}
+
+.vm-box {
+    background: var(--grey);
+    border-radius: 16px;
+    padding: 36px;
+    border: 1px solid rgba(211, 175, 133, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.25s;
+}
+
+.vm-box:hover {
+    box-shadow: 0 8px 32px rgba(244, 179, 21, 0.08);
+}
+
+.vm-box::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    opacity: 0.08;
+}
+
+.vm-box.vision {
+    border-color: rgba(244, 179, 21, 0.2);
+}
+
+.vm-box.vision::before {
+    background: var(--yellow);
+}
+
+.vm-box.mission {
+    border-color: rgba(142, 89, 21, 0.35);
+}
+
+.vm-box.mission::before {
+    background: var(--brown);
+}
+
+.vm-box h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.vm-box.vision h2 {
+    color: var(--yellow);
+}
+
+.vm-box.mission h2 {
+    color: var(--yellow);
+}
+
+.vm-box p,
+.vm-box li {
+    color: var(--cream);
+    font-size: 15px;
+    line-height: 1.8;
+    opacity: 0.85;
+}
+
+.vm-box ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.vm-box ul li::before {
+    content: '▸ ';
+    color: var(--yellow);
+}
+
+/* closing */
+.closing {
+    text-align: center;
+    padding: 60px 40px 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.closing::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 100%, rgba(142, 89, 21, 0.12), transparent 60%);
+    pointer-events: none;
+}
+
+.closing h2 {
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--cream);
+    position: relative;
+}
+
+.closing p {
+    color: var(--cream);
+    opacity: 0.7;
+    font-size: 16px;
+    margin-bottom: 32px;
+    position: relative;
+}
+
+.closing-btn {
+    display: inline-block;
+    background: var(--brown);
+    color: var(--yellow);
+    font-size: 18px;
+    font-weight: 700;
+    padding: 14px 36px;
+    border-radius: 8px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 8px 8px 11px 5px rgba(244, 179, 21, 0.2);
+    position: relative;
+}
+
+.closing-btn:hover {
+    background: var(--oldyellow);
+    color: var(--brown);
+    transform: scale(1.04);
+    box-shadow: 8px 8px 20px 5px rgba(244, 179, 21, 0.35);
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
