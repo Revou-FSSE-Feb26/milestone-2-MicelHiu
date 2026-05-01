@@ -24,15 +24,14 @@ function getWinner(player, computer) {
         case `scissors-paper`:
         case `paper-rock`:
             return "player";
-            break;
         default:
             return "computer";
     }
 }
 
 function updateHands(player, computer) {
-    playerHand.src = `../../images/rocky/${player}Player.png`;
-    computerHand.src = `../../images/rocky/${computer}Computer.png`;
+    playerHand.src = `../images/rocky/${player}Player.png`;
+    computerHand.src = `../images/rocky/${computer}Computer.png`;
 }
 
 buttons.forEach(button => {
@@ -73,6 +72,9 @@ buttons.forEach(button => {
                     computerScore = 0;
                     finalComputerScore.textContent = 0;
                     finalPlayerScore.textContent = 0;
+
+                    updateHands("rock", "rock");
+                    result.textContent = "";
                 }, 200);
             }
         }, 1000);

@@ -49,6 +49,5 @@ btnCheck.addEventListener("click", function() {
     if(attempts === 0) {
         alert(`Game Over! Try again fellas, the number was ${randomNumber}`);
         resetGame();
-        return;
     } 
 })
