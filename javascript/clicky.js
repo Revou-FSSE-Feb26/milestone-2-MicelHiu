@@ -1,3 +1,5 @@
+// CLICKY WICKY
+// load variabel yang dibutuhkan
 const start = document.querySelector(".btnStart");
 const rulesSection = document.querySelector(".rules");
 const clickySection = document.querySelector(".clicky");
@@ -9,27 +11,22 @@ let isGameRunning = false;
 let score = 0;
 let dotTimeout;
 
-clickySection.style.display = "none";
+clickySection.style.display = "none"; // sembunyiin section clicky dulu
 
-document.addEventListener("keydown", function(event) {
-    if(event.key === "Escape") {
-        stopGame();
-        rulesSection.style.display = "block";
-        clickySection.style.display = "none";
-    }
-});
-
+// event listener untuk tombol start
 start.addEventListener("click", async function() {
     rulesSection.style.display = "none";
-    clickySection.style.display = "block";
+    clickySection.style.display = "block"; //memunculkan section clicky
 
     await startCountdown();
 });
 
+// fungsi untuk delay
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+// fungsi untuk countdown sebelum game dimulai
 async function startCountdown() {
     const countdown = document.querySelector(".countdown");
 
@@ -45,6 +42,7 @@ async function startCountdown() {
     startGame();
 }
 
+// fungsi untuk memulai game
 function startGame() {
     score = 0;
     document.querySelector(".score").textContent = score;
@@ -53,6 +51,7 @@ function startGame() {
     spawnDot();
 }
 
+// fungsi untuk timer
 function startTimer() {
     const timer = document.querySelector(".timer");
 
@@ -69,9 +68,10 @@ function startTimer() {
         }
     }, 1000);
 }
-
+// variabel untuk menyimpan dot yang sedang muncul
 let currentDot = null;
 
+// fungsi untuk spawn dot
 function spawnDot() {
     if(!isGameRunning) return;
     clearTimeout(dotTimeout);
@@ -95,18 +95,21 @@ function spawnDot() {
     arena.appendChild(dot);
     currentDot = dot;
 
+    // event listener untuk klik dot
     dot.addEventListener("click", () => {
         score++;
         document.querySelector(".score").textContent = score;
         spawnDot();
     });
 
+    // set timeout untuk dot hilang dan muncul lagi jika tidak diklik
     dotTimeout = setTimeout(() => {
         dot.remove();
         spawnDot();
     }, 1000);
 }
 
+//
 function stopGame() {
     if (!isGameRunning) return;
 
@@ -123,5 +126,13 @@ function stopGame() {
     clickySection.style.display = "none";
 }
 
+// event listener untuk tombol escape untuk keluar dari game
+document.addEventListener("keydown", function(event) {
+    if(event.key === "Escape") {
+        stopGame();
+        rulesSection.style.display = "block";
+        clickySection.style.display = "none";
+    }
+});
 
 
