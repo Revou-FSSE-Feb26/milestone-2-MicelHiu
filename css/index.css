@@ -179,6 +179,32 @@ header {
     cursor: pointer;
 }
 
+.btnGames {
+    display: inline-block;
+    align-self: center;
+    background: var(--black);
+    padding: 10px 16px;
+    text-decoration: none;
+    color: var(--yellow);
+    border-radius: 8px;
+    box-shadow: 5px 5px 11px 5px rgba(244,179,21,0.55);
+    z-index: 2;
+    font-weight: 600;
+}
+
+.btnGames a {
+    color: var(--yellow);
+    text-decoration: none;
+}
+
+.btnGames:hover {
+    background: var(--yellow);
+}
+
+.btnGames:hover a {
+    color: var(--black);
+}
+
 .arrow-left,
 .arrow-right {
     background: none;

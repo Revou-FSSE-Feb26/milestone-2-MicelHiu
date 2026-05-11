@@ -70,7 +70,22 @@ form.addEventListener("click", (e) => {
 
     switch(button.type) {
         case "submit":
+            e.preventDefault();
+
+            //ambil data dari form
+            const name = form.querySelector("input[name='name']").value;
+            const email = form.querySelector("input[name='email']").value;
+            const feedback = form.querySelector("textarea[name='feedback']").value;
+
+            //simpan data ke array
+            allFeedback.push({ 
+                name, 
+                email, 
+                feedback 
+            });
+            /* console.log(allFeedback); */
             alert("Feedback successfully sent, thank you !");
+            form.reset();
             break;
 
         case "reset":
@@ -80,4 +95,7 @@ form.addEventListener("click", (e) => {
     }
 })
 
+
+
+//footer year copyright
 document.getElementById("year").textContent = new Date().getFullYear();
