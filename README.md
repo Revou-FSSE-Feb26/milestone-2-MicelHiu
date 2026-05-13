@@ -4,11 +4,11 @@ RevoFun is a web-based mini game platform, created to deliver fun dan interactiv
 # Features Implemented
 Link of demo: https://drive.google.com/file/d/1n0kn8xpJFv25MUiHKaevHAJ4gqwa8qoY/view?usp=sharing
 - Home pages: shows a brief introduction to RevoFun, some of the games, and a feedback-form to get in touch with the dev.
-![home](image.png)
+![home](images/homeScreenshot.png)
 - About Us pages: shows a background detail about RevoFun, including their story, vision, mission, and what their real target is.
-![about](image-1.png)
+![about](images/aboutScreenshot.png)
 - Games pages: shows all of the games that was created by RevoFun. User can play all of their games by clicking the game's card.
-![games](image-2.png)
+![games](images/gamesScreenshot.png)
 - Others:
     - Responsive multi-page website design
     - Game rules page before gameplay start
