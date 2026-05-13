@@ -101,7 +101,7 @@
 }
 
 .story-text h2 {
-    font-size: 36px;
+    font-size: 2.5rem;
     font-weight: 700;
     color: var(--yellow);
     margin-bottom: 16px;
@@ -120,7 +120,7 @@
 }
 
 .values > h2 {
-    font-size: 36px;
+    font-size: 2.5rem;
     font-weight: 700;
     color: var(--yellow);
     text-align: center;
@@ -276,7 +276,7 @@
 }
 
 .closing h2 {
-    font-size: clamp(28px, 4vw, 48px);
+    font-size: clamp(2.5rem, 4vw, 3rem);
     font-weight: 700;
     margin-bottom: 16px;
     color: var(--cream);
