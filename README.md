@@ -21,5 +21,5 @@ Link of demo: https://drive.google.com/file/d/1n0kn8xpJFv25MUiHKaevHAJ4gqwa8qoY/
 # Technologies Used 🧑‍💻
 - Frontend: HTML, CSS, JavaScript
 - Backend: -
-- Deploy: GitHub Pages
-- Link URL: https://revou-fsse-feb26.github.io/milestone-2-MicelHiu/
+- Deploy: Netlify
+- Link URL: https://revofun-micelhiu.netlify.app/
