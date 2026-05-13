@@ -11,12 +11,12 @@ let isGameRunning = false;
 let score = 0;
 let dotTimeout;
 
-clickySection.style.display = "none"; // sembunyiin section clicky dulu
+clickySection.classList.add("hidden");
 
 // event listener untuk tombol start
 start.addEventListener("click", async function() {
-    rulesSection.style.display = "none";
-    clickySection.style.display = "block"; //memunculkan section clicky
+    rulesSection.classList.add("hidden");
+    clickySection.classList.remove("hidden");
 
     await startCountdown();
 });
@@ -122,16 +122,16 @@ function stopGame() {
 
     alert(`Your score: ${score}`);
 
-    rulesSection.style.display = "block";
-    clickySection.style.display = "none";
+    rulesSection.classList.remove("hidden");
+    clickySection.classList.add("hidden");
 }
 
 // event listener untuk tombol escape untuk keluar dari game
 document.addEventListener("keydown", function(event) {
     if(event.key === "Escape") {
         stopGame();
-        rulesSection.style.display = "block";
-        clickySection.style.display = "none";
+        rulesSection.classList.remove("hidden");
+        clickySection.classList.add("hidden");
     }
 });
 

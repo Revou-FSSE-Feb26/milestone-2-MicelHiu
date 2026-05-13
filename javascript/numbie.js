@@ -3,11 +3,11 @@ const startButton = document.querySelector(".btnStart");
 const rulesSection = document.querySelector(".rules");
 const numbieSection = document.querySelector(".numbie");
 
-numbieSection.style.display = "none";
+numbieSection.classList.add("hidden");
 
 startButton.addEventListener("click", function() {
-    rulesSection.style.display = "none";
-    numbieSection.style.display = "block";
+    rulesSection.classList.add("hidden");
+    numbieSection.classList.remove("hidden");
 });
 
 // NUMBIE WUMBIE
@@ -17,9 +17,8 @@ const result = document.querySelectorAll(".result-container p");
 let randomNumber = Math.floor(Math.random() * 100) + 1;
 const attemptsEl = document.querySelector(".attempts");
 let attempts = Number(attemptsEl.textContent);
-
-/* testing for winning (shortcuts)
-result[0].textContent = randomNumber; */
+const soundWin = new Audio("../audio/win.mp3");
+const soundLose = new Audio("../audio/lose.mp3");
 
 // fungsi untuk reset game
 function resetGame() {
@@ -60,6 +59,7 @@ btnCheck.addEventListener("click", function() {
         case playerAnswer === randomNumber:
             result[0].textContent = `Your answer = ${playerAnswer}`;
             result[1].textContent = "You got it! Congratulations !";
+            soundWin.play();
             alert("You beat the game! Congratulations !");
             resetGame();
             return;
@@ -68,7 +68,10 @@ btnCheck.addEventListener("click", function() {
 
     // pengecekan attempts/nyawa habis atau tidak
     if(attempts === 0) {
+        soundLose.play();
         alert(`Game Over! Try again fellas, the number was ${randomNumber}`);
         resetGame();
-    } 
+    }
+    
+    document.getElementById("input-answer").value = "";
 })

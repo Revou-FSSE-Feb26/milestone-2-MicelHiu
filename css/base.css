@@ -68,6 +68,11 @@ main p {
     font-size: 18px;
 }
 
+/* hidden elements */
+.hidden {
+    display: none; 
+}
+
 footer {
     display: flex;
     flex-direction: row;

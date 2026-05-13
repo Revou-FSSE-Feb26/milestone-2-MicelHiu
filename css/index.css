@@ -50,7 +50,7 @@ header {
 }
 
 .hero h2 {
-    font-size: 5rem;
+    font-size: 8rem;
     font-weight: 900;
     position: relative;
     z-index: 2;
@@ -291,7 +291,7 @@ header {
 /* tablet */
 @media screen and (max-width: 1024px) {
     .hero h2 {
-        font-size: 3.5rem;
+        font-size: 5rem;
     }
 
     .hero p {
@@ -318,7 +318,7 @@ header {
 /* small tablet / larga mobile */
 @media screen and (max-width: 768px) {
     h2 {
-        font-size: 28px;
+        font-size: 3.5rem;
     }
 
     .hero h2 {

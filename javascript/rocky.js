@@ -3,11 +3,11 @@ const startButton = document.querySelector(".btnStart");
 const rulesSection = document.querySelector(".rules");
 const rockySection = document.querySelector(".rocky");
 
-rockySection.style.display = "none";
+rockySection.classList.add("hidden");
 
 startButton.addEventListener("click", function() {
-    rulesSection.style.display = "none";
-    rockySection.style.display = "block";
+    rulesSection.classList.add("hidden");
+    rockySection.classList.remove("hidden");
 });
 
 // ROCK PAPER SCISSORS GAME
@@ -18,6 +18,8 @@ const finalComputerScore = document.querySelector(".computerPoints");
 const finalPlayerScore = document.querySelector(".playerPoints");
 const buttons = document.querySelectorAll(".options-buttons button");
 let result = document.querySelector(".result h2");
+const soundWin = new Audio("../audio/win.mp3");
+const soundLose = new Audio("../audio/lose.mp3");
 
 let playerScore = 0;
 let computerScore = 0;
@@ -85,7 +87,13 @@ buttons.forEach(button => {
             //cek game selesai
             if (playerScore === 3 || computerScore === 3) {
                 setTimeout(() => {
-                    alert (playerScore === 3 ? "You Win!" : "Computer Wins!");
+                    if(playerScore === 3) {
+                        soundWin.play();
+                        alert("You Win!");
+                    } else {
+                        soundLose.play();
+                        alert("Computer Wins!");
+                    }
                     playerScore = 0;
                     computerScore = 0;
                     finalComputerScore.textContent = 0;
