@@ -37,8 +37,6 @@ btnCheck.addEventListener("click", function() {
     if (!playerAnswer || playerAnswer < 1 || playerAnswer > 100) {
         result[0].textContent = `Your answer = ${playerAnswer}`;
         result[1].textContent = "Between 1 and 100 fellas. Read the rules again please";
-        attempts--;
-        attemptsEl.textContent = attempts;
         return;
     }
 
